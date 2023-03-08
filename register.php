@@ -54,7 +54,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <input type="password" name="password" id="password"><br>
         <button class="submit" type="submit">登録</button>
     </form>
-        <a href="index.php">ホームへ戻る</a>
+        <a href="index.html">ホームへ戻る</a>
 </body>
 
 </html>
