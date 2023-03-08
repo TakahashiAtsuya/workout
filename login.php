@@ -50,7 +50,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <h1>ログイン</h1>
     <h3>登録したユーザー名とパスワードを入力して下さい</h3>
     <?php if (isset($error)) : ?>
-        <p class="error"><?php echo $error; ?></p>
+        <p><?php echo $error; ?></p>
     <?php endif; ?>
     <form method="POST">
         <label for="username">ユーザー名:</label>
