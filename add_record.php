@@ -49,7 +49,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <input type="date" name="date" id="date"><br>
         <label for="exercise">種目：</label>
         <input type="text" name="exercise" id="exercise"><br>
-        <label for="weight">重量：</label>
+        <label for="weight">重量(kg)：</label>
         <input type="number" name="weight" id="weight" min="1"><br>
         <label for="reps">回数：</label>
         <input type="number" name="reps" id="reps" min="1"><br>
