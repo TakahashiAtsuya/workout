@@ -2,8 +2,8 @@
 require_once 'config.php';
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $username = $_POST["username"];
-    $password =  $_POST["password"];
+    $username = htmlspecialchars($_POST["username"], ENT_QUOTES, 'UTF-8');
+    $password =  htmlspecialchars($_POST["password"], ENT_QUOTES, 'UTF-8');
 
     if (empty($username) || empty($password)) {
         $error = "ユーザー名とパスワードを入力して下さい";
@@ -42,10 +42,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <h1>新規登録</h1>
     <h3>任意のユーザー名とパスワードを入力して下さい</h3>
     <?php if (isset($error)) : ?>
-        <p class="error"><?php echo $error; ?></p>
+        <p class="error"><?php echo htmlspecialchars($error, ENT_QUOTES, 'UTF-8'); ?></p>
     <?php endif; ?>
     <?php if (isset($message)) : ?>
-        <p class="message"><?php echo $message; ?></p>
+        <p class="message"><?php echo htmlspecialchars($message, ENT_QUOTES, 'UTF-8'); ?></p>
     <?php endif; ?>
     <form method="POST">
         <label for="username">ユーザー名:</label>
