@@ -13,7 +13,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $weight = $_POST["weight"];
     $reps = $_POST["reps"];
 
-    if (!empty($date) && !empty($exercise) && !empty($weight) && !empty($reps)) {
+    if (empty($date) || empty($exercise) || empty($weight) || empty($reps)) {
+        $error = "全てのフィールドを入力してください";
+    } else {
         $sql = "INSERT INTO records (user_id, date, exercise, weight, reps) VALUES (?, ?, ?, ?, ?)";
         $stmt = $pdo->prepare($sql);
         $stmt->bindParam(1, $_SESSION['id'], PDO::PARAM_INT);
@@ -24,8 +26,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $stmt->execute();
         header("Location: view_records.php");
         exit;
-    } else {
-        $error = "全てのフィールドを入力してください";
     }
 }
 ?>
