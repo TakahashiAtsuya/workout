@@ -8,8 +8,8 @@ if (isset($_SESSION['username'])) {
 require_once 'config.php';
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $username = $_POST["username"];
-    $password = $_POST["password"];
+    $username = htmlspecialchars($_POST["username"], ENT_QUOTES, 'UTF-8');
+    $password = htmlspecialchars($_POST["password"], ENT_QUOTES, 'UTF-8');
 
     if (empty($username) || empty($password)) {
         $error = "ユーザー名とパスワードの両方を入力してください。";
@@ -41,7 +41,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <html lang="ja">
 
 <head>
-    <meta charset="UTF-8">
+    <meta chaarset="UTF-8">
     <title>ログインページ</title>
     <link rel="stylesheet" a href="login.css">
 </head>
@@ -50,7 +50,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <h1>ログイン</h1>
     <h3>登録したユーザー名とパスワードを入力して下さい</h3>
     <?php if (isset($error)) : ?>
-        <p><?php echo $error; ?></p>
+        <p><?php echo htmlspecialchars($error, ENT_QUOTES, 'UTF-8'); ?></p>
     <?php endif; ?>
     <form method="POST">
         <label for="username">ユーザー名:</label>
