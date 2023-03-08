@@ -53,6 +53,7 @@ label {
 
 p {
   text-align: center;
+  color: red;
 }
 
 .link {
@@ -66,7 +67,4 @@ a {
 }
 a:hover {
   text-decoration: underline;
-}
-.error {
-  color: red;
 }
