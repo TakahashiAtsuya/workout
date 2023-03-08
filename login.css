@@ -40,6 +40,7 @@ input {
 p {
   margin-top: 20px;
   font-size: 18px;
+  color: red;
 }
 a {
   display: inline-block;
@@ -50,7 +51,4 @@ a {
 }
 a:hover {
   text-decoration: underline;
-}
-.error {
-  color: red;
 }
