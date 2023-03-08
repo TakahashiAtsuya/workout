@@ -42,7 +42,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <body>
     <h1>記録追加</h1>
     <?php if (isset($error)) : ?>
-        <p class="error"><?php echo $error; ?></p>
+        <p><?php echo $error; ?></p>
     <?php endif; ?>
     <form method="POST">
         <label for="date">日付：</label>
