@@ -29,7 +29,7 @@ $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
         <tr>
             <th>日付</th>
             <th>種目</th>
-            <th>重量</th>
+            <th>重量(kg)</th>
             <th>回数</th>
             <th>削除</th>
         </tr>
