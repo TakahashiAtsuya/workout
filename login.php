@@ -12,7 +12,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $password = htmlspecialchars($_POST["password"], ENT_QUOTES, 'UTF-8');
 
     if (empty($username) || empty($password)) {
-        $error = "ユーザー名とパスワードの両方を入力してください。";
+        $error = "ユーザー名とパスワードを入力してください。";
     } else {
         $sql = "SELECT id, password FROM users WHERE username = ?";
         $stmt = $pdo->prepare($sql);
@@ -50,7 +50,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <h1>ログイン</h1>
     <h3>登録したユーザー名とパスワードを入力して下さい</h3>
     <?php if (isset($error)) : ?>
-        <p><?php echo htmlspecialchars($error, ENT_QUOTES, 'UTF-8'); ?></p>
+        <p><?php echo $error; ?></p>
     <?php endif; ?>
     <form method="POST">
         <label for="username">ユーザー名:</label>
