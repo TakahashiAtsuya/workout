@@ -42,10 +42,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <h1>新規登録</h1>
     <h3>任意のユーザー名とパスワードを入力して下さい</h3>
     <?php if (isset($error)) : ?>
-        <p class="error"><?php echo htmlspecialchars($error, ENT_QUOTES, 'UTF-8'); ?></p>
+        <p class="error"><?php echo $error; ?></p>
     <?php endif; ?>
     <?php if (isset($message)) : ?>
-        <p class="message"><?php echo htmlspecialchars($message, ENT_QUOTES, 'UTF-8'); ?></p>
+        <p class="message"><?php echo $error; ?></p>
     <?php endif; ?>
     <form method="POST">
         <label for="username">ユーザー名:</label>
